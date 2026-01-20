@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1",
+        "category": "ADMISSION",
+        "question": {
+            "ru": "Какие документы нужны для поступления?",
+            "en": "What documents are required for admission?"
+        },
+        "answer": {
+            "ru": "Основные документы: Диплом/Аттестат с апостилем, DOV (Dichiarazione di Valore) или CIMEA, Сертификат языка (IELTS/CILS). Для точного списка проверьте сайт университета.",
+            "en": "Main documents: Diploma/Certificate with apostille, DOV (Dichiarazione di Valore) or CIMEA, Language certificate (IELTS/CILS). Check the university website for the exact list."
+        },
+        "keywords": [
+            "документы",
+            "documents",
+            "diploma",
+            "диплом",
+            "dov",
+            "cimea"
+        ]
+    },
+    {
+        "id": "2",
+        "category": "SCHOLARSHIPS",
+        "question": {
+            "ru": "Что такое DSU стипендия?",
+            "en": "What is DSU scholarship?"
+        },
+        "answer": {
+            "ru": "DSU - региональная стипендия, покрывающая обучение, общежитие и питание + выплаты до €7000/год. Зависит от ISEE (дохода семьи).",
+            "en": "DSU is a regional scholarship covering tuition, accommodation, and meals + payments up to €7000/year. Depends on ISEE (family income)."
+        },
+        "keywords": [
+            "dsu",
+            "стипендия",
+            "scholarship",
+            "isee",
+            "money",
+            "деньги"
+        ]
+    },
+    {
+        "id": "3",
+        "category": "VISA",
+        "question": {
+            "ru": "Сколько денег нужно на счету для Визы D?",
+            "en": "How much money is needed for Visa D?"
+        },
+        "answer": {
+            "ru": "На 2024 год требуется показать около €6000-€7000 на счету (примерно €467 в месяц).",
+            "en": "For 2024, you need to show about €6000-€7000 in your account (approx. €467 per month)."
+        },
+        "keywords": [
+            "виза",
+            "visa",
+            "деньги",
+            "money",
+            "bank",
+            "счет"
+        ]
+    }
+]

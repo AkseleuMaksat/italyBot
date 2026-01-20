@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: italy_postgres
+    environment:
+      POSTGRES_DB: italy_db
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - italy_network
+
+  bot:
+    build: .
+    container_name: italy_bot
+    depends_on:
+      - postgres
+    environment:
+      BOT_TOKEN: ${BOT_TOKEN}
+      BOT_USERNAME: ${BOT_USERNAME}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/italy_db
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-postgres}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    networks:
+      - italy_network
+    restart: always
+
+networks:
+  italy_network:
+    driver: bridge
+
+volumes:
+  postgres_data:

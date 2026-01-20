@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: italy-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: italy_bot
+      POSTGRES_USER: italy_user
+      POSTGRES_PASSWORD: italy_pass
+    volumes:
+      - italy_pg_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  italy-bot:
+    build: .
+    container_name: italy-student-bot
+    depends_on:
+      - postgres
+    restart: always
+    environment:
+      BOT_TOKEN: your_bot_token
+      BOT_USERNAME: your_bot_username
+
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/italy_bot
+      SPRING_DATASOURCE_USERNAME: italy_user
+      SPRING_DATASOURCE_PASSWORD: italy_pass
+
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "false"
+    ports:
+      - "8080:8080"
+
+volumes:
+  italy_pg_data:
