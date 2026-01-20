@@ -99,7 +99,12 @@ public class BotService {
         String lowerQuery = query.toLowerCase();
 
         // 1. Try finding by keyword (simple fuzzy simulation via LIKE)
-        List<FaqItem> results = faqRepository.findByQuestionContainingIgnoreCaseAndLang(lowerQuery, lang);
+        // 1. Try finding by keyword (simple fuzzy simulation via LIKE)
+        // We search if question contains query OR keywords contains query, AND lang
+        // matches
+        List<FaqItem> results = faqRepository
+                .findByLangAndQuestionContainingIgnoreCaseOrLangAndKeywordsContainingIgnoreCase(
+                        lang, lowerQuery, lang, lowerQuery);
 
         // If results are empty, we might want to search in Category names or Keywords
         // too.

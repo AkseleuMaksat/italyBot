@@ -13,10 +13,12 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMa
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import com.education.italy.model.User;
+import com.education.italy.repository.UserRepository;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Component
 public class ItalyStudentBot extends TelegramLongPollingBot {
@@ -29,13 +31,12 @@ public class ItalyStudentBot extends TelegramLongPollingBot {
 
     private final BotService botService;
     private final FaqRepository faqRepository;
+    private final UserRepository userRepository;
 
-    // Simple in-memory user language state. In prod, use DB.
-    private final Map<Long, String> userLanguages = new HashMap<>();
-
-    public ItalyStudentBot(BotService botService, FaqRepository faqRepository) {
+    public ItalyStudentBot(BotService botService, FaqRepository faqRepository, UserRepository userRepository) {
         this.botService = botService;
         this.faqRepository = faqRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -62,18 +63,19 @@ public class ItalyStudentBot extends TelegramLongPollingBot {
         String text = update.getMessage().getText();
 
         if (text.equals("/start")) {
+            registerUser(chatId);
             sendLanguageSelection(chatId);
             return;
         }
 
-        String lang = userLanguages.getOrDefault(chatId, "ru"); // Default RU
+        String lang = getUserLanguage(chatId);
 
         // Search logic
         List<FaqItem> results = botService.search(text, lang);
         if (results.isEmpty()) {
             sendMessage(chatId, lang.equals("ru")
-                    ? "Пожалуйста, уточните вопрос или выберите тему из меню."
-                    : "Please clarify your question or select a topic from the menu.", true);
+                    ? "Хм, я пока не знаю ответа на этот вопрос. 🤔 Попробуйте сформулировать иначе или посмотрите темы в меню 👇"
+                    : "Hmm, I don't know the answer yet. 🤔 Try rephrasing or check the topics in the menu 👇", true);
         } else if (results.size() == 1) {
             sendAnswer(chatId, results.get(0), lang);
         } else {
@@ -88,20 +90,20 @@ public class ItalyStudentBot extends TelegramLongPollingBot {
 
         if (data.startsWith("LANG_")) {
             String lang = data.split("_")[1].toLowerCase();
-            userLanguages.put(chatId, lang);
+            updateUserLanguage(chatId, lang);
             sendMainMenu(chatId, lang);
         } else if (data.equals("MENU")) {
-            sendMainMenu(chatId, userLanguages.getOrDefault(chatId, "ru"));
+            sendMainMenu(chatId, getUserLanguage(chatId));
         } else if (data.equals("TOPICS")) {
-            sendTopics(chatId, userLanguages.getOrDefault(chatId, "ru"));
+            sendTopics(chatId, getUserLanguage(chatId));
         } else if (data.startsWith("CAT_")) {
             String catName = data.split("_")[1];
             Category cat = Category.valueOf(catName);
-            showCategoryQuestions(chatId, cat, userLanguages.getOrDefault(chatId, "ru"));
+            showCategoryQuestions(chatId, cat, getUserLanguage(chatId));
         } else if (data.startsWith("FAQ_")) {
             String id = data.split("_")[1];
             faqRepository.findById(id)
-                    .ifPresent(item -> sendAnswer(chatId, item, userLanguages.getOrDefault(chatId, "ru")));
+                    .ifPresent(item -> sendAnswer(chatId, item, getUserLanguage(chatId)));
         }
     }
 
@@ -247,7 +249,8 @@ public class ItalyStudentBot extends TelegramLongPollingBot {
     private void sendSuggestions(long chatId, List<FaqItem> results, String lang) {
         SendMessage message = new SendMessage();
         message.setChatId(String.valueOf(chatId));
-        message.setText(lang.equals("ru") ? "Возможно, вы имели в виду:" : "Maybe you meant:");
+        message.setText(lang.equals("ru") ? "Я нашел несколько похожих тем. Взгляните:"
+                : "I found a few similar topics. Take a look:");
 
         InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> rows = new ArrayList<>();
@@ -313,5 +316,25 @@ public class ItalyStudentBot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
+    }
+
+    private void registerUser(long chatId) {
+        if (!userRepository.existsById(chatId)) {
+            User user = new User(chatId, "ru", LocalDateTime.now());
+            userRepository.save(user);
+        }
+    }
+
+    private String getUserLanguage(long chatId) {
+        return userRepository.findById(chatId)
+                .map(User::getLanguage)
+                .orElse("ru");
+    }
+
+    private void updateUserLanguage(long chatId, String lang) {
+        userRepository.findById(chatId).ifPresent(user -> {
+            user.setLanguage(lang);
+            userRepository.save(user);
+        });
     }
 }

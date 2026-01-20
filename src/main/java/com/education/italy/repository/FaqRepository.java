@@ -14,5 +14,7 @@ public interface FaqRepository extends JpaRepository<FaqItem, String> {
     // Simple database-side search using LIKE
     // For better search, full-text search capability of Postgres (tsvector) could
     // be used, but this is simple start.
-    List<FaqItem> findByQuestionContainingIgnoreCaseAndLang(String questionPart, String lang);
+    // Search by question OR keywords (case-insensitive) for a specific language
+    List<FaqItem> findByLangAndQuestionContainingIgnoreCaseOrLangAndKeywordsContainingIgnoreCase(
+            String lang1, String questionPart, String lang2, String keywordsPart);
 }
