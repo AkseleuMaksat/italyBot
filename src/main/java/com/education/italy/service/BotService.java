@@ -54,9 +54,13 @@ public class BotService {
                     // So for 1 JSON item with RU and EN, we create 2 Entities.
 
                     Category category = Category.valueOf(((String) raw.get("category")));
-                    Map<String, String> questions = (Map<String, String>) raw.get("question");
-                    Map<String, String> answers = (Map<String, String>) raw.get("answer");
-                    List<String> keywordsList = (List<String>) raw.get("keywords");
+                    Map<String, String> questions = objectMapper.convertValue(raw.get("question"),
+                            new TypeReference<>() {
+                            });
+                    Map<String, String> answers = objectMapper.convertValue(raw.get("answer"), new TypeReference<>() {
+                    });
+                    List<String> keywordsList = objectMapper.convertValue(raw.get("keywords"), new TypeReference<>() {
+                    });
                     String keywords = keywordsList != null ? String.join(",", keywordsList) : "";
 
                     // RU
