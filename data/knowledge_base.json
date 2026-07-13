@@ -1,0 +1,130 @@
+{
+  "topics": [
+    { "id": "admission", "emoji": "🏛", "title": { "ru": "Поступление", "en": "Admission" } },
+    { "id": "scholarship", "emoji": "🎓", "title": { "ru": "Стипендии", "en": "Scholarships" } },
+    { "id": "visa", "emoji": "🛂", "title": { "ru": "Виза D", "en": "Visa D" } },
+    { "id": "arrival", "emoji": "🇮🇹", "title": { "ru": "По приезде", "en": "After arrival" } }
+  ],
+  "faq": [
+    {
+      "id": "adm-docs",
+      "topic": "admission",
+      "question": { "ru": "Какие документы нужны для поступления?", "en": "What documents do I need to apply?" },
+      "answer": {
+        "ru": "Обычно для поступления нужны:\n• Аттестат/диплom с приложением (переведённый и легализованный)\n• Dichiarazione di Valore (DoV) или CIMEA-справка о признании\n• Загранпаспорт\n• Мотивационное письмо и/или CV (если требует вуз)\n• Сертификат языка (итальянский B2 или английский, зависит от программы)\n\nТочный список смотрите на сайте выбранного университета — он может отличаться.",
+        "en": "Usually you'll need:\n• Diploma with transcript (translated and legalized)\n• Dichiarazione di Valore (DoV) or a CIMEA recognition statement\n• Passport\n• Motivation letter and/or CV (if the university asks)\n• Language certificate (Italian B2 or English, depends on the program)\n\nCheck the exact list on your university's website — it may vary."
+      },
+      "keywords": ["документы", "поступление", "аттестат", "диплом", "cimea", "dov", "documents", "apply", "diploma"]
+    },
+    {
+      "id": "adm-deadlines",
+      "topic": "admission",
+      "question": { "ru": "Какие дедлайны по подаче документов?", "en": "What are the application deadlines?" },
+      "answer": {
+        "ru": "Ключевые сроки обычно такие:\n• Подача заявки в вуз (Apply) — часто с ноября по март/апрель\n• Преиммaтрикуляция на Universitaly — обычно до июля\n• Запись на визу в консульстве — сразу после подтверждения вуза\n\nДаты у каждого университета свои — всегда сверяйтесь с официальным календарём приёма.",
+        "en": "Key dates are usually:\n• University application (Apply) — often November to March/April\n• Pre-enrolment on Universitaly — usually until July\n• Visa appointment at the consulate — right after the university confirms you\n\nEach university sets its own dates — always check the official admissions calendar."
+      },
+      "keywords": ["дедлайн", "сроки", "когда", "universitaly", "преимматрикуляция", "deadline", "dates", "when"]
+    },
+    {
+      "id": "adm-taxes",
+      "topic": "admission",
+      "question": { "ru": "Что за налоги 10,40€ и 186€ при поступлении?", "en": "What are the 10.40€ and 186€ taxes?" },
+      "answer": {
+        "ru": "Это государственные сборы за зачисление:\n• 10,40€ — марка (bollo) / региональный сбор, оплачивается при подаче документов.\n• 186€ — tassa regionale (региональный налог на право на образование), платится ежегодно.\n\nОплата обычно через сайт вуза (PagoPA). Точные суммы зависят от региона и года — проверяйте на сайте университета.",
+        "en": "These are state enrolment fees:\n• 10.40€ — the bollo (stamp) / regional fee, paid when you submit documents.\n• 186€ — tassa regionale (regional tax for the right to education), paid yearly.\n\nUsually paid via the university portal (PagoPA). Exact amounts depend on the region and year — check your university's site."
+      },
+      "keywords": ["налог", "налоги", "10.40", "10,40", "186", "сбор", "bollo", "tassa", "tax", "fee", "pagopa"]
+    },
+    {
+      "id": "sch-dsu",
+      "topic": "scholarship",
+      "question": { "ru": "Что такое стипендия DSU и как её получить?", "en": "What is the DSU scholarship and how to get it?" },
+      "answer": {
+        "ru": "DSU (Diritto allo Studio Universitario) — региональная стипендия по праву на образование. Даётся по двум критериям:\n• Доход (ISEE) — нужна справка ISEE/ISEE Parificato\n• Успеваемость (для 2+ курсов — набранные CFU)\n\nПодаётся заявка на сайте регионального агентства (например, DiSCo для Лацио) обычно летом/осенью. Может покрывать деньги, жильё и питание.",
+        "en": "DSU (Diritto allo Studio Universitario) is a regional right-to-study scholarship. It's granted by two criteria:\n• Income (ISEE) — you need an ISEE / ISEE Parificato statement\n• Academic merit (from 2nd year — earned CFU credits)\n\nYou apply on the regional agency's website (e.g. DiSCo for Lazio), usually in summer/autumn. It can cover money, housing and meals."
+      },
+      "keywords": ["dsu", "стипендия", "isee", "право на образование", "scholarship", "grant"]
+    },
+    {
+      "id": "sch-laziodisco",
+      "topic": "scholarship",
+      "question": { "ru": "Что такое LazioDisco / DiSCo?", "en": "What is LazioDisco / DiSCo?" },
+      "answer": {
+        "ru": "DiSCo (бывш. LazioDisco) — региональное агентство по праву на образование в Лацио (Рим и область). Через него подают на стипендию DSU, общежитие и льготное питание в столовых (mensa).\n\nСайт: laziodisco.it — там же публикуется bando (конкурс) со сроками и суммами на текущий год.",
+        "en": "DiSCo (formerly LazioDisco) is the right-to-study agency for the Lazio region (Rome and around). Through it you apply for the DSU scholarship, student housing and subsidized meals (mensa).\n\nWebsite: laziodisco.it — the yearly bando (call) with deadlines and amounts is published there."
+      },
+      "keywords": ["laziodisco", "disco", "лацио", "рим", "агентство", "общежитие", "mensa", "bando", "lazio"]
+    },
+    {
+      "id": "sch-taxrefund",
+      "topic": "scholarship",
+      "question": { "ru": "Как вернуть налоги (возврат налогов студенту)?", "en": "How do I get a tax refund as a student?" },
+      "answer": {
+        "ru": "Если вы получили стипендию DSU, региональный налог 186€ и часть сборов обычно возвращаются (rimborso) или изначально не начисляются — «идеонеи» стипендиаты освобождаются.\n\nЧто сделать:\n1. Убедиться, что вы в списке победителей/идонеев по DSU.\n2. Подать/проверить реквизиты (IBAN) в личном кабинете агентства.\n3. Возврат приходит на счёт по решению агентства.\n\nДетали и сроки — в bando вашего региона.",
+        "en": "If you received the DSU scholarship, the 186€ regional tax and part of the fees are usually refunded (rimborso) or not charged at all — eligible ('idoneo') recipients are exempt.\n\nWhat to do:\n1. Make sure you're on the DSU winners/eligible list.\n2. Add/check your bank details (IBAN) in the agency's account.\n3. The refund is paid to your account per the agency's decision.\n\nDetails and timing are in your region's bando."
+      },
+      "keywords": ["возврат", "налог", "rimborso", "вернуть", "186", "refund", "tax back", "iban"]
+    },
+    {
+      "id": "visa-docs",
+      "topic": "visa",
+      "question": { "ru": "Какие документы нужны для визы D (учебной)?", "en": "What documents are needed for the Visa D (study)?" },
+      "answer": {
+        "ru": "Базовый пакет на учебную визу D:\n• Загранпаспорт + фото\n• Анкета на визу (national visa application)\n• Подтверждение зачисления/преимматрикуляции (Universitaly)\n• Финансовые гарантии (≈ от 6.000–7.000€ на год)\n• Медицинская страховка на весь срок\n• Подтверждение жилья в Италии\n• Обратный билет/бронь\n\nТочный список — на сайте вашего консульства Италии, он может отличаться по странам.",
+        "en": "Basic package for the study Visa D:\n• Passport + photos\n• Visa application form (national visa)\n• Proof of enrolment / pre-enrolment (Universitaly)\n• Proof of financial means (≈ 6,000–7,000€ per year)\n• Health insurance for the whole stay\n• Proof of accommodation in Italy\n• Return ticket/booking\n\nCheck the exact list on your Italian consulate's site — it varies by country."
+      },
+      "keywords": ["виза", "d", "документы", "анкета", "консульство", "visa", "documents", "consulate"]
+    },
+    {
+      "id": "visa-finance",
+      "topic": "visa",
+      "question": { "ru": "Какие финансовые гарантии нужны для визы?", "en": "What financial guarantees are required for the visa?" },
+      "answer": {
+        "ru": "Нужно подтвердить, что вам хватит средств на год учёбы. Ориентир — около 6.000–7.000€ (сумма пересматривается ежегодно).\n\nЧем подтверждают:\n• Выписка с банковского счёта (вашего или спонсора)\n• Спонсорское письмо + документы спонсора\n• Стипендия (если есть) тоже засчитывается\n\nКонкретную сумму и формат смотрите на сайте консульства.",
+        "en": "You must prove you have enough funds for a year of study. The benchmark is roughly 6,000–7,000€ (reviewed yearly).\n\nHow to prove it:\n• Bank statement (yours or a sponsor's)\n• Sponsorship letter + sponsor's documents\n• A scholarship (if any) also counts\n\nCheck the exact amount and format on the consulate's website."
+      },
+      "keywords": ["финансы", "гарантии", "деньги", "счет", "спонсор", "финансовые", "money", "funds", "sponsor", "bank"]
+    },
+    {
+      "id": "visa-insurance",
+      "topic": "visa",
+      "question": { "ru": "Какая страховка нужна для учебной визы?", "en": "What health insurance do I need for the study visa?" },
+      "answer": {
+        "ru": "Нужна медицинская страховка, действующая в Италии/Шенгене:\n• Покрытие не менее 30.000€\n• Экстренная помощь и госпитализация\n• На весь период до въезда (потом в Италии оформляют SSN или частную страховку на год)\n\nПодойдёт полис страховой, признаваемой консульством. Уточняйте требования на его сайте.",
+        "en": "You need health insurance valid in Italy/Schengen:\n• Coverage of at least 30,000€\n• Emergency care and hospitalization\n• For the whole period before entry (in Italy you later register with the SSN or get a yearly private plan)\n\nA policy from an insurer recognized by the consulate works. Check the requirements on its website."
+      },
+      "keywords": ["страховка", "страхование", "медицинская", "insurance", "health", "ssn", "30000"]
+    },
+    {
+      "id": "arr-permesso",
+      "topic": "arrival",
+      "question": { "ru": "Как оформить permesso di soggiorno (ВНЖ)?", "en": "How do I get the permesso di soggiorno (residence permit)?" },
+      "answer": {
+        "ru": "Permesso di soggiorno нужно оформить в течение 8 рабочих дней после въезда:\n1. Взять «kit giallo» (жёлтый набор) на почте Poste Italiane.\n2. Заполнить анкету, приложить копии паспорта, визы, страховки, зачисления, финансов.\n3. Оплатить сборы и отправить через окно Sportello Amico.\n4. Получить дату в Questura (снятие отпечатков).\n\nДо готовности карты действует квитанция (ricevuta).",
+        "en": "You must apply for the permesso di soggiorno within 8 working days of arrival:\n1. Get the 'kit giallo' (yellow kit) at a Poste Italiane office.\n2. Fill the form, attach copies of passport, visa, insurance, enrolment, finances.\n3. Pay the fees and submit at the Sportello Amico counter.\n4. Get a Questura appointment (fingerprints).\n\nUntil the card is ready, the receipt (ricevuta) is valid proof."
+      },
+      "keywords": ["permesso", "soggiorno", "внж", "вид на жительство", "questura", "kit giallo", "poste", "residence permit"]
+    },
+    {
+      "id": "arr-codice",
+      "topic": "arrival",
+      "question": { "ru": "Что такое codice fiscale и как его получить?", "en": "What is the codice fiscale and how to get it?" },
+      "answer": {
+        "ru": "Codice fiscale — итальянский ИНН, нужен почти везде (банк, жильё, SIM, вуз). Как получить:\n• В Agenzia delle Entrate (налоговая) — с паспортом и визой, бесплатно.\n• Иногда его выдаёт консульство при визе или сам университет.\n\nВыдают в тот же день в виде кода/карточки. Часто нужен ещё до permesso.",
+        "en": "The codice fiscale is the Italian tax code, needed almost everywhere (bank, housing, SIM, university). How to get it:\n• At the Agenzia delle Entrate (tax office) — with passport and visa, free of charge.\n• Sometimes the consulate issues it with the visa, or the university does.\n\nIt's issued the same day as a code/card. Often needed even before the permesso."
+      },
+      "keywords": ["codice", "fiscale", "инн", "налоговый код", "agenzia entrate", "tax code"]
+    },
+    {
+      "id": "arr-residenza",
+      "topic": "arrival",
+      "question": { "ru": "Как сделать прописку (residenza) и найти жильё?", "en": "How do I register residence (residenza) and find housing?" },
+      "answer": {
+        "ru": "Прописка (residenza) оформляется в муниципалитете (Comune / Anagrafe) по месту жилья:\n• Нужен договор аренды (contratto di affitto) с регистрацией.\n• Паспорт, permesso/ricevuta, codice fiscale.\n\nЖильё ищут через: агентства, сайты (idealista, immobiliare.it), студенческие общежития (через DiSCo/вуз), группы землячеств. Договор оформляйте официально — он нужен и для визы, и для прописки.",
+        "en": "Residence (residenza) is registered at the municipality (Comune / Anagrafe) at your address:\n• You need a registered rental contract (contratto di affitto).\n• Passport, permesso/ricevuta, codice fiscale.\n\nFind housing via: agencies, sites (idealista, immobiliare.it), student dorms (through DiSCo/university), community groups. Always sign an official contract — it's needed both for the visa and the residenza."
+      },
+      "keywords": ["прописка", "residenza", "жилье", "аренда", "квартира", "comune", "anagrafe", "affitto", "housing", "rent"]
+    }
+  ]
+}
