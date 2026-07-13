@@ -1,0 +1,7 @@
+[tools]
+python = "3.12"
+
+[settings]
+# Railway/mise падал на проверке GitHub-подписей при установке Python.
+# Отключаем проверку — сборка проходит нормально.
+python.github_attestations = false
